@@ -1,0 +1,69 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini App Store</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="hero">
+      <div class="top-row">
+        <button class="back" aria-label="Назад">‹</button>
+        <div class="top-actions">
+          <span class="pill">AppStore</span>
+        </div>
+      </div>
+
+      <h1>Игры и приложения</h1>
+      <p class="subtitle">Подбери игру, быстро найди по поиску и отсортируй по жанрам.</p>
+
+      <div class="search">
+        <span class="search-icon">⌕</span>
+        <input id="searchInput" type="text" placeholder="Поиск по играм и приложениям" />
+        <button id="clearSearch" class="clear" aria-label="Очистить">×</button>
+      </div>
+
+      <div id="genreChips" class="chips" aria-label="Жанры"></div>
+
+      <div class="sort-row">
+        <div class="sort-label">Сортировка</div>
+        <select id="sortSelect" aria-label="Сортировка">
+          <option value="popular">Популярные</option>
+          <option value="rating">По рейтингу</option>
+          <option value="genre">По жанру</option>
+          <option value="az">По названию A–Z</option>
+        </select>
+      </div>
+    </header>
+
+    <main id="gameList" class="list"></main>
+
+    <nav class="tabbar" aria-label="Навигация">
+      <button class="tab active">
+        <span class="tab-icon">☼</span>
+        <span>Сегодня</span>
+      </button>
+      <button class="tab">
+        <span class="tab-icon">★</span>
+        <span>Игры</span>
+      </button>
+      <button class="tab">
+        <span class="tab-icon">▦</span>
+        <span>Приложения</span>
+      </button>
+      <button class="tab">
+        <span class="tab-icon">▶</span>
+        <span>Аркада</span>
+      </button>
+      <button class="tab">
+        <span class="tab-icon">⌕</span>
+        <span>Поиск</span>
+      </button>
+    </nav>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
