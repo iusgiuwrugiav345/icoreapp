@@ -7,7 +7,7 @@ FREE_DOWNLOADS = 5  # Сколько раз можно скачать беспл
 PRICE = 0.60  # Цена подписки (например, в USDT эквиваленте)
 
 # URL ????-???? (Telegram Web App)
-WEBAPP_URL = ""https://boostixnet.onrender.com/webapp?v=5""
+WEBAPP_URL = "https://boostixnet.onrender.com/webapp?v=5"
 
 # API-ключи для оплаты
 CRYPTOBOT_API = "451092:AAqI0nRURGaWhW5rHy0rFk3T6z6r1wYS87U"
