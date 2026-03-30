@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPA Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="menu-button" id="menu-toggle" type="button" aria-controls="sidebar" aria-expanded="false">
+        <span class="menu-icon" aria-hidden="true">☰</span>
+    </button>
+    <div class="scrim" id="scrim" aria-hidden="true"></div>
+
+    <div class="container">
+        <nav class="sidebar" id="sidebar" aria-label="Навигация">
+            <div class="sidebar-header">
+                <span class="brand">IPA Store</span>
+                <button class="menu-close" id="menu-close" type="button" aria-label="Закрыть меню">×</button>
+            </div>
+            <ul>
+                <li><button class="nav-item" type="button">Главная</button></li>
+                <li><button class="nav-item" type="button">Категории</button></li>
+                <li><button class="nav-item" type="button">Топ</button></li>
+                <li><button class="nav-item" type="button">Загрузки</button></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="hero">
+                <h1>IPA Store</h1>
+                <p>Топовые приложения и игры для iOS, собранные в одном месте.</p>
+            </header>
+
+            <div class="app-cards-container">
+                <div class="app-card">
+                    <img src="minecraft-icon.png" alt="Minecraft" class="app-icon">
+                    <h2>Minecraft</h2>
+                    <p>iOS 12+ required</p>
+                    <button class="primary-btn" type="button">Скачать</button>
+                </div>
+                <div class="app-card">
+                    <img src="gta-icon.png" alt="GTA San Andreas" class="app-icon">
+                    <h2>GTA: San Andreas</h2>
+                    <p>iOS 12+ required</p>
+                    <button class="primary-btn" type="button">Скачать</button>
+                </div>
+                <div class="app-card">
+                    <img src="geometry-dash-icon.png" alt="Geometry Dash" class="app-icon">
+                    <h2>Geometry Dash</h2>
+                    <p>iOS 11+ required</p>
+                    <button class="primary-btn" type="button">Скачать</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
