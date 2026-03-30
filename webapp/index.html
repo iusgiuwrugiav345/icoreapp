@@ -1,0 +1,92 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini App Store</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="title-block">
+        <div class="title">Today</div>
+        <div id="todayDate" class="subtitle"></div>
+      </div>
+      <div class="avatar" aria-hidden="true"></div>
+    </header>
+
+    <section class="search-wrap">
+      <div class="search">
+        <span class="search-icon">⌕</span>
+        <input id="searchInput" type="text" placeholder="Search games & apps" />
+        <button id="clearSearch" class="clear" aria-label="Clear">×</button>
+      </div>
+      <div id="genreChips" class="chips" aria-label="Genres"></div>
+    </section>
+
+    <main class="content">
+      <section id="heroSection" class="hero"></section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <h2>Now Trending</h2>
+            <p>Fresh releases and sharp picks.</p>
+          </div>
+          <span class="chev">›</span>
+        </div>
+        <div id="carousel" class="carousel"></div>
+      </section>
+
+      <section class="section list-section">
+        <div class="section-head">
+          <div>
+            <h2>What We’re Playing</h2>
+            <p>Favorites that always feel right.</p>
+          </div>
+          <span class="chev">›</span>
+        </div>
+        <div id="playingList" class="list"></div>
+      </section>
+
+      <section class="section list-section">
+        <div class="section-head">
+          <div>
+            <h2>Top Free Apps</h2>
+            <p>Utility, focus, and craft.</p>
+          </div>
+          <span class="chev">›</span>
+        </div>
+        <div id="topList" class="rank-list"></div>
+      </section>
+    </main>
+
+    <nav class="tabbar" aria-label="Navigation">
+      <button class="tab active">
+        <span class="tab-icon">☼</span>
+        <span>Today</span>
+      </button>
+      <button class="tab">
+        <span class="tab-icon">★</span>
+        <span>Games</span>
+      </button>
+      <button class="tab">
+        <span class="tab-icon">▦</span>
+        <span>Apps</span>
+      </button>
+      <button class="tab">
+        <span class="tab-icon">▶</span>
+        <span>Arcade</span>
+      </button>
+      <button class="tab">
+        <span class="tab-icon">⌕</span>
+        <span>Search</span>
+      </button>
+    </nav>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
