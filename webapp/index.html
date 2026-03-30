@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <title>IPA Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <img class="logo" src="logo.svg" alt="logo">
+            <div>
+                <h1 class="title">IPA Store</h1>
+                <div class="subtitle">Каталог приложений и игр для iOS</div>
+            </div>
+        </header>
+
+        <div class="search-wrap">
+            <input id="searchInput" class="search" placeholder="Поиск приложений и игр" />
+            <button id="searchBtn" class="btn">Поиск</button>
+        </div>
+
+        <div id="typeFilter" class="chips">
+            <button class="chip active" data-type="">Все</button>
+            <button class="chip" data-type="game">Игры</button>
+            <button class="chip" data-type="app">Приложения</button>
+        </div>
+
+        <div id="tabFilter" class="chips">
+            <button class="chip active" data-tab="popular">Популярные</button>
+            <button class="chip" data-tab="new">Новые</button>
+            <button class="chip" data-tab="top">Топ</button>
+        </div>
+
+        <div class="section-title" id="sectionTitle">Популярные</div>
+        <div id="list" class="grid">
+            <article class="card" data-type="game" data-name="Minecraft">
+                <div class="app-icon">MC</div>
+                <div>
+                    <h3 class="meta-title">Minecraft</h3>
+                    <div class="meta-sub">iOS 12+ · Sandbox</div>
+                    <div class="meta-row">
+                        <span>⭐ 4.8</span>
+                        <span>1.2M</span>
+                        <span>📦 1.3 GB</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="ghost-btn">Открыть</button>
+                    <button class="ghost-btn primary">Скачать</button>
+                </div>
+            </article>
+
+            <article class="card" data-type="game" data-name="GTA San Andreas">
+                <div class="app-icon">GTA</div>
+                <div>
+                    <h3 class="meta-title">GTA: San Andreas</h3>
+                    <div class="meta-sub">iOS 12+ · Action</div>
+                    <div class="meta-row">
+                        <span>⭐ 4.6</span>
+                        <span>560K</span>
+                        <span>📦 2.4 GB</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="ghost-btn">Открыть</button>
+                    <button class="ghost-btn primary">Скачать</button>
+                </div>
+            </article>
+
+            <article class="card" data-type="game" data-name="Geometry Dash">
+                <div class="app-icon">GD</div>
+                <div>
+                    <h3 class="meta-title">Geometry Dash</h3>
+                    <div class="meta-sub">iOS 11+ · Arcade</div>
+                    <div class="meta-row">
+                        <span>⭐ 4.7</span>
+                        <span>740K</span>
+                        <span>📦 210 MB</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="ghost-btn">Открыть</button>
+                    <button class="ghost-btn primary">Скачать</button>
+                </div>
+            </article>
+
+            <article class="card" data-type="app" data-name="Procreate">
+                <div class="app-icon">PR</div>
+                <div>
+                    <h3 class="meta-title">Procreate</h3>
+                    <div class="meta-sub">iOS 14+ · Design</div>
+                    <div class="meta-row">
+                        <span>⭐ 4.9</span>
+                        <span>980K</span>
+                        <span>📦 260 MB</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="ghost-btn">Открыть</button>
+                    <button class="ghost-btn primary">Скачать</button>
+                </div>
+            </article>
+        </div>
+
+        <div id="empty" class="empty" style="display: none;">
+            <strong>Ничего не найдено</strong>
+            Попробуй другой запрос или сбрось фильтры
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <button class="nav-btn active" data-nav="home">Главная</button>
+        <button class="nav-btn" data-nav="search">Поиск</button>
+        <button class="nav-btn" data-nav="favorites">Избранное</button>
+        <button class="nav-btn" data-nav="profile">Профиль</button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
