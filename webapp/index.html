@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <title>IPA Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/webapp/style.css?v=10" />
+    <link rel="stylesheet" href="style.css?v=10" />
+</head>
+<body data-theme="dark">
+    <div class="sakura-layer" id="sakuraLayer" aria-hidden="true"></div>
+
+    <div class="menu-scrim" id="menuScrim" hidden></div>
+    <aside class="side-menu" id="sideMenu" aria-hidden="true">
+        <div class="side-menu-head">
+            <div class="side-menu-title" id="menuTitle">Menu</div>
+            <button class="side-menu-close" id="menuClose" type="button" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.4 5 5.6 5.6L17.6 5 19 6.4 13.4 12 19 17.6 17.6 19 12 13.4 6.4 19 5 17.6 10.6 12 5 6.4Z"></path></svg>
+            </button>
+        </div>
+
+        <button class="menu-link" id="policyToggle" type="button">
+            <span id="policyButtonLabel">Privacy Policy</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg>
+        </button>
+
+        <section class="menu-policy" id="policyPanel" hidden>
+            <h3 id="policyTitle">Privacy Policy</h3>
+            <div id="policyBody"></div>
+        </section>
+
+        <section class="menu-section">
+            <div class="menu-section-title" id="languageLabel">Language</div>
+            <div class="segmented-control" id="langControl">
+                <button class="segment-button active" data-role="lang" data-lang="ru" type="button">RU</button>
+                <button class="segment-button" data-role="lang" data-lang="en" type="button">EN</button>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <div class="menu-section-title" id="themeLabel">Theme</div>
+            <div class="segmented-control" id="themeControl">
+                <button class="segment-button" data-role="theme" data-theme="light" type="button" id="themeBright">Bright</button>
+                <button class="segment-button active" data-role="theme" data-theme="dark" type="button" id="themeDark">Dark</button>
+            </div>
+        </section>
+
+        <section class="menu-support">
+            <div class="menu-section-title" id="supportLabel">Support</div>
+            <p id="supportValue">Bot support: @Helpicore_bot</p>
+        </section>
+    </aside>
+
+    <div class="app-shell">
+        <header class="app-header">
+            <div class="status-row">
+                <div class="status-left">
+                    <button class="menu-button" id="menuButton" type="button" aria-label="Open menu">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v2H4zm0 6h16v2H4zm0 6h12v2H4z"></path></svg>
+                    </button>
+                    <span class="status-time" id="timeBadge">00:00</span>
+                </div>
+                <button class="profile-button" type="button" aria-label="Profile">
+                    <span class="profile-glow"></span>
+                    <span class="profile-core">A</span>
+                </button>
+            </div>
+
+            <p class="header-kicker" id="headerKicker">Featured today</p>
+            <div class="header-main">
+                <h1 class="screen-title" id="screenTitle">Today</h1>
+                <div class="header-pill" id="headerPill">Curated</div>
+            </div>
+            <p class="screen-subtitle" id="screenSubtitle">Big releases, sharp apps and fast install actions.</p>
+        </header>
+
+        <section class="search-shell" id="searchShell" hidden>
+            <label class="search-field" for="searchInput">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 4a6.5 6.5 0 1 0 4.02 11.61l3.43 3.43 1.41-1.41-3.43-3.43A6.5 6.5 0 0 0 10.5 4Zm0 2a4.5 4.5 0 1 1-4.5 4.5A4.5 4.5 0 0 1 10.5 6Z"></path></svg>
+                <input id="searchInput" type="search" placeholder="Search games, apps, developers" autocomplete="off" />
+                <button class="search-clear" id="searchClear" type="button">Clear</button>
+            </label>
+        </section>
+
+        <section class="filter-shell" id="filterShell" hidden>
+            <div class="filter-track" id="filterTrack"></div>
+        </section>
+
+        <main class="screen-content">
+            <div class="hero-rail" id="heroRail"></div>
+            <div class="section-stack" id="sectionStack"></div>
+            <div class="empty-state" id="emptyState" hidden>
+                <strong id="emptyTitle">No matches found</strong>
+                <span id="emptyText">Try a different keyword or category.</span>
+            </div>
+        </main>
+    </div>
+
+    <div class="sheet-scrim" id="sheetScrim" hidden></div>
+    <aside class="detail-sheet" id="detailSheet" aria-hidden="true">
+        <button class="sheet-close" id="sheetClose" type="button" aria-label="Close">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.4 5 5.6 5.6L17.6 5 19 6.4 13.4 12 19 17.6 17.6 19 12 13.4 6.4 19 5 17.6 10.6 12 5 6.4Z"></path></svg>
+        </button>
+        <div id="detailContent"></div>
+    </aside>
+
+    <nav class="bottom-bar" id="bottomBar">
+        <button class="tab-button active" data-screen="today" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5Zm2 0v11a.5.5 0 0 0 .5.5H12V6H6.5a.5.5 0 0 0-.5.5Zm8 11h3.5a.5.5 0 0 0 .5-.5v-5H14Zm4-7v-4a.5.5 0 0 0-.5-.5H14v4Z"></path></svg>
+            <span id="tabToday">Today</span>
+        </button>
+        <button class="tab-button" data-screen="games" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10a4 4 0 0 1 3.87 5l-.76 3A3 3 0 0 1 17.2 18H6.8a3 3 0 0 1-2.91-2l-.76-3A4 4 0 0 1 7 8Zm.5 3H6v2h1.5v1.5h2V13H11v-2H9.5V9.5h-2Zm8.5 1.5a1.25 1.25 0 1 0-1.25-1.25A1.25 1.25 0 0 0 16 12.5Zm2.5 3a1.25 1.25 0 1 0-1.25-1.25A1.25 1.25 0 0 0 18.5 15.5Z"></path></svg>
+            <span id="tabGames">Games</span>
+        </button>
+        <button class="tab-button" data-screen="apps" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8l1 3h2v2H5V7h2Zm-1 7h10v9H7Z"></path></svg>
+            <span id="tabApps">Apps</span>
+        </button>
+        <button class="tab-button tab-button-search" data-screen="search" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 4a6.5 6.5 0 1 0 4.02 11.61l3.43 3.43 1.41-1.41-3.43-3.43A6.5 6.5 0 0 0 10.5 4Zm0 2a4.5 4.5 0 1 1-4.5 4.5A4.5 4.5 0 0 1 10.5 6Z"></path></svg>
+            <span id="tabSearch">Search</span>
+        </button>
+    </nav>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        (function () {
+            const scriptUrls = ["/webapp/script.js?v=10", "script.js?v=10"];
+            let index = 0;
+
+            function loadNext() {
+                if (index >= scriptUrls.length) return;
+                const script = document.createElement("script");
+                script.src = scriptUrls[index];
+                script.defer = true;
+                script.onerror = function () {
+                    index += 1;
+                    loadNext();
+                };
+                document.body.appendChild(script);
+            }
+
+            loadNext();
+        }());
+    </script>
+</body>
+</html>
